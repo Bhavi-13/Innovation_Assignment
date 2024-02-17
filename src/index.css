@@ -5,9 +5,99 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.card{
+  z-index: 1;
+}
+.navbar{
+  z-index: 3;
+}
+.card .card-img-top{
+  /* object-fit: cover; */
+  object-position: center;
+  border-bottom: 1px solid;
+}
+.pointer {
+  cursor: pointer;
+}
+form {
+  background-color: antiquewhite;
+  width:40%;
+  display: flex;
+  flex-direction: column;
+  margin: 150px auto;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 0px 0px 5px;
+  border-radius: 10px;
+  text-shadow: 0px 0px 5px white;
+
+}
+form h2{
+margin: 20px;
+text-align: center;
+}
+
+form:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: pointer;
+  position: relative;
+}
+form .formDetails {
+margin-bottom: 10px;
+}
+form label{
+  padding:10px;
+  position: relative;
+}
+form label::after {
+  content: "";
+  width:0;
+  left:10px;
+  background-color: rgb(133, 169, 133);
+  position: absolute;
+  height:2px;
+  bottom: 5px;
+}
+form label:hover::after {
+   width: 75%;
+  transition: .5s;
+  cursor: pointer;
+}
+form input{
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+}
+form input:focus{
+  outline: none;
+}
+.loginBtn{
+  border: none;
+  padding: 10px;
+  color:white;
+  font-size: 18px;
+  background-color: black;
+  border-radius: 100px;
+  width: 50%;
+  margin: 10px auto;
+}
+.loginBtn:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media screen and (max-width:575px){
+  .searchOptions .search {
+    width: 100px;
+    margin: auto;
+  }
 }

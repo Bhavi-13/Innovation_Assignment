@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import Home from './component/Home'
+import Cart from './component/Cart'
+import ProductDetails from './component/ProductDetails'
+import Products from './component/Products'
+import Menu from './Header/Menu'
+import Pnf from './util/Pnf'
+import Categories from './component/Categories'
+import LoginPage from './Auth/LoginPage'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Menu />
+      <ToastContainer autoClose={4000} position={'top-right'} />
+      <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/categories"} element={<Categories />} />
+          <Route path={"/products/:catName"} element={<Products />} />
+          <Route path={"/product/:id/category/:catName"} element={<ProductDetails />} />
+          <Route path={"/cart"} element={<Cart />} />
+          <Route path={"*"}element={<Pnf />} />
+          <Route path={"/login"}element={<LoginPage />} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
